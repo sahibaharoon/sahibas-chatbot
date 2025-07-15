@@ -17,18 +17,7 @@
 ---
 
 ## 📂 Project Structure
-📁 chatbot-project/
-├── main.py                 # Flask backend (entry point)
-├── templates/
-│   ├── index.html          # Welcome / landing page
-│   └── chat.html           # Chat interface
-├── static/
-│   ├── style.css           # Custom styling
-│   ├── script.js           # Typing animation & chat logic
-│   └── screenshot.png      # Screenshot (optional)
-├── uploads/                # Uploaded PDF files (temporary)
-├── .env                    # Your Together API key (not pushed)
-└── requirements.txt        # Python dependencies
+
 
 ---
 
@@ -36,5 +25,5 @@
 
 1. **Clone the repo**
    ```bash
-   git clone https://github.com/YOUR_USERNAME/chatbot-project.git
+   git clone https://github.com/sahibaharoon/sahibas-chatbot.git
    cd chatbot-project
