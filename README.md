@@ -45,12 +45,12 @@
 2. **Create virtual environment**
 
 3. **Install dependencies**
-      pip install -r requirements.txt
+     - pip install -r requirements.txt
 4. **Add env file**
-   Make a together api key and add it
-   TOGETHER_API_KEY=yourkey
+   - Make a together api key and add it
+   - TOGETHER_API_KEY=yourkey
 6. **Run app**
-   python3 main.py
+   - python3 main.py
 
 
    
