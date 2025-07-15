@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: sahibas-chatbot
+    runtime: python
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "python main.py"
+    envVars:
+      - key: TOGETHER_API_KEY
+        value: e42a6b610270a59ebaa42d1a9587289011d873c36140db4b091536c2c4c4476d
