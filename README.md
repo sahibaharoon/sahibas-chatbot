@@ -17,7 +17,22 @@
 ---
 
 ## 📂 Project Structure
-
+<pre>
+<code>
+📁 chatbot-project/
+├── main.py                 # Flask backend (entry point)
+├── templates/
+│   ├── index.html          # Welcome / landing page
+│   └── chat.html           # Chat interface
+├── static/
+│   ├── style.css           # Custom styling
+│   ├── script.js           # Typing animation & chat logic
+│   
+├── uploads/                # Uploaded PDF files (temporary)
+├── .env                    # Your Together API key (not pushed)
+└── requirements.txt        # Python dependencies
+</code>
+</pre>
 
 ---
 
