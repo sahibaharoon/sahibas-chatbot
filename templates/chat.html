@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Ask Me Anything 🤖</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600&family=Noto+Color+Emoji&display=swap" rel="stylesheet">
+</head>
+<body class="chat-body">
+  <div class="chat-card">
+    <h2>Ask Me Anything 🤖</h2>
+
+    <div class="chat-box" id="chat-box"></div>
+
+    <!-- Input + Upload section -->
+    <div class="input-upload-group">
+      <input type="text" id="user-input" placeholder="Type your message..." onkeypress="if(event.key === 'Enter') sendMessage()" />
+      <button onclick="sendMessage()">Send</button>
+      <label for="fileInput" class="upload-label">📄</label>
+      <input type="file" id="fileInput" accept=".pdf" onchange="uploadFile()" />
+    </div>
+    <p id="previewText"></p>
+  </div>
+
+  <footer>made with ♥️ by Sahiba Haroon</footer>
+  <script src="/static/script.js"></script>
+</body>
+</html>
