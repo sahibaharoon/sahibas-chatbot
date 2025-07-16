@@ -132,3 +132,36 @@ footer {
   color: #666;
   font-size: 14px;
 }
+.dark-mode {
+  background: linear-gradient(120deg, #1f2937, #111827);
+  color: white;
+}
+
+.dark-mode .chat-card,
+.dark-mode .upload-label,
+.dark-mode .chat-box,
+.dark-mode .user,
+.dark-mode .bot,
+.dark-mode input[type="text"],
+.dark-mode button,
+.dark-mode #previewText {
+  background-color: #1f2937;
+  color: white;
+  border-color: #333;
+}
+
+.dark-mode .user {
+  background-color: #2563eb;
+  color: #fff;
+}
+
+.dark-mode .bot {
+  background-color: #374151;
+  color: #fff;
+}
+
+/* Drag and drop visual feedback */
+.drag-over {
+  outline: 3px dashed #4e9fe6;
+  outline-offset: -10px;
+}

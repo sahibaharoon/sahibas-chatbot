@@ -12,14 +12,15 @@
 
     <div class="chat-box" id="chat-box"></div>
 
-    <!-- Input + Upload section -->
     <div class="input-upload-group">
       <input type="text" id="user-input" placeholder="Type your message..." onkeypress="if(event.key === 'Enter') sendMessage()" />
       <button onclick="sendMessage()">Send</button>
-      <label for="fileInput" class="upload-label">📄</label>
-      <input type="file" id="fileInput" accept=".pdf" onchange="uploadFile()" />
     </div>
-    <p id="previewText"></p>
+
+    <div class="input-upload-group" style="margin-top: 10px;">
+      <button onclick="toggleDarkMode()">🌙 Toggle Dark Mode</button>
+      <button onclick="downloadChat()">💾 Download Chat</button>
+    </div>
   </div>
 
   <footer>made with ♥️ by Sahiba Haroon</footer>

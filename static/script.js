@@ -1,20 +1,4 @@
-async function uploadFile() {
-  const fileInput = document.getElementById("fileInput");
-  const file = fileInput.files[0];
-  if (!file) return alert("Please select a PDF file!");
-
-  const formData = new FormData();
-  formData.append("file", file);
-
-  const res = await fetch("/upload", { method: "POST", body: formData });
-  const data = await res.json();
-
-  if (data.success) {
-    document.getElementById("previewText").innerText = "✅ File uploaded! Preview:\n" + data.preview;
-  } else {
-    alert(data.error);
-  }
-}
+let chatHistory = [];
 
 async function sendMessage() {
   const input = document.getElementById("user-input");
@@ -23,6 +7,7 @@ async function sendMessage() {
 
   const chatBox = document.getElementById("chat-box");
   chatBox.innerHTML += `<div class='user'>You: ${message}</div>`;
+  chatHistory.push("You: " + message);
   input.value = "";
 
   const res = await fetch("/chat", {
@@ -34,7 +19,6 @@ async function sendMessage() {
   const data = await res.json();
   const reply = data.reply;
 
-  // Typing effect
   const botDiv = document.createElement("div");
   botDiv.className = "bot";
   chatBox.appendChild(botDiv);
@@ -44,8 +28,24 @@ async function sendMessage() {
     if (i < reply.length) {
       botDiv.innerHTML += reply.charAt(i);
       i++;
-      setTimeout(typeChar, 20); // typing speed
+      setTimeout(typeChar, 20);
+    } else {
+      chatHistory.push("Bot: " + reply);
     }
   }
   typeChar();
+}
+
+function downloadChat() {
+  const blob = new Blob([chatHistory.join("\n\n")], { type: "text/plain" });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = "chat-history.txt";
+  a.click();
+  URL.revokeObjectURL(url);
+}
+
+function toggleDarkMode() {
+  document.body.classList.toggle("dark-mode");
 }
